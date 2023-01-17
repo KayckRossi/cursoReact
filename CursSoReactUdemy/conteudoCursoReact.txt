@@ -1,0 +1,268 @@
+ oi lindo
+ window pega a janela inteira do navegador 
+     <button onclick="window.location.href ='varginha.html'">Vai pra pqp</button> <!--metodo para acessar outras paginas -->
+     <button onclick="window.location.href = window.location.href">Recarregar</button> <!--metodo para fazer o refresh da pagina -->
+    ---------------------------------------------------------------------------------------------------------------------------
+
+    ---------------------------------------------------------------------------------------------------------------------------
+   
+   Alterar informações da div ou outro elemento
+   
+    <div id="login">
+        Bem vindo...
+    </div>
+
+    <br> <br>
+
+
+    <!-- document é quando esta se referindo aos elementos dentro da pagina -->
+    <button onclick="document.getElementById('login').innerHTML = 'Bem vindo o mais gostoso' 
+      + ' ' + prompt('qul é o seu nome?');">Entrar</button> metodo para alterar informações dentro de um elemento.
+
+---------------------------------
+
+Alterar botão
+     <div id="login">
+            Qual o nome do botão ?
+        </div>
+
+        <br> <br>
+
+        <!-- metodo para alterar o nome dentro do botão -->
+        <button onclick="this.innerHTML = prompt('Qual o nome do botão? '); ">Qual é o meu nome</button>
+
+----------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------
+10/01
+
+Alterando informações da Div com function dentro do script JS 
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Inicio curso</title>
+
+        <script type="text/javascript" src="script.js"></script>
+    </head>
+    <body>
+<!---NOME-->
+        <div id="area">
+            Bem vindo....
+        </div>
+
+        <br> <br>
+
+        <button onclick="entrar()">entrar</button>
+
+<!------->
+        <br> <br>
+<!------>
+
+<!--Sobrenome-->
+        <div id="area2">
+            Bem vindo....
+        </div>
+
+        <br> <br>
+
+        <button onclick="entrar2('Kayck')">entrar</button>
+
+        <br> <br>
+
+    <!--idade-->
+
+    <div id="area3">
+        Bem vindo 
+    </div>
+
+    <br> <br>
+
+    <button onclick="entrar3()">Entrar</button>
+
+
+
+
+    </body>
+</html>
+
+--------functions JS --------------------
+
+//Alterei as informações da Div com as functions
+
+innerHTML que insere as alterações dentro da Div
+
+function entrar() {
+
+    var area = document.getElementById ("area");
+
+    var texto = prompt("Digite seu nome?");
+
+    if (texto == "" || texto == null) {
+        alert ("Digite seu nome caraio...");
+        area.innerHTML = "Bem vindo" + " " + texto;
+    }
+    else{
+        area.innerHTML = "Bem vindo" + " " + texto;
+    }
+
+}
+
+function entrar2(nome) {
+
+    var area2 = document.getElementById("area2");
+
+    var texto = prompt ('Digite seu sobrenome por favor..')
+
+    area2.innerHTML = "Bem vindo" + " " + nome + " "+ texto;
+}
+
+function entrar3(idade){
+
+    var area3 = document.getElementById('area3');
+
+    var texto = prompt ('Digite sua  idade');
+
+    var nome = prompt ('Digite seu nome');
+
+    var sobrenome = prompt ('Digite seu sobrenome');
+
+    // area3.innerHTML = "Olá " + idade + " " + "você tem " + texto + " " + "anos";
+    area3.innerHTML = "Olá" + " " + nome + " " + sobrenome + " " + "você tem "+ texto + " " + "anos";
+}
+
+---------------------------------------------------------------
+
+//-ESTRUTURA DE LOOPS
+
+//While = enquanto estiver rodando alguma coisa
+
+  x = 0;
+
+  while (x < 10 ) {
+
+      document.write('</br> O valor de X é :' + x )
+     x++;
+ }
+
+//For = Para // Pode ser passado mais de uma condição
+
+for (a = 0; a < 10; a++) {
+    document.write('<br> o valor de A é :' + a );
+}
+
+
+write é usado para implementar coisas dentro do html sem precisar inserir lá no proprio arquivo html
+
+document.write ("<br/> <h1>Escolha sua cor favorita:</h1>");
+document.write ("<br/> <p>0-Verde / 1-Azul</p>");
+document.write ("<br/>  <p> 2-Vermelho / 3-Preto</p>");
+
+function pedir() {
+    
+    x = prompt("Qual é o sua cor favorita? ");
+
+
+switch (x) {
+            case "0" : 
+                alert("sua cor favorita é verde");
+                break;
+            case "1" : 
+                alert("sua cor favorita é azul");
+                break
+            case "2" : 
+                alert("sua cor favorita é vermelho");
+                break;
+            case "3" : 
+                alert("sua cor favorita é preto");
+                break;
+
+                default :
+                    alert ("Not implemented/Digite um numero valido");
+                    break;
+        }
+    }
+
+        <button onclick="pedir()">Escolher</button>
+
+------------------------------------
+
+//TEMPORIZADOR
+
+function temporizador() {
+    document.write("Carregando lindo...</br>");   
+}
+
+//setInterval = executa de tempo em tempo sem parar
+var timer = setInterval (temporizador, 1000); 
+
+  <button onclick="clearInterval(timer)">Parar</button> metodo para parar o loop do timer
+
+// setTimeout = Executa apenas uma vez
+// setTimeout (temporizador, 1000);
+
+
+--------------------12/01/23------------------------------------
+// CRIANDO ARRAYS
+
+var lista = ["Kayck", "Gabriel", "Rossi", "Conceição", 18];
+
+alert(lista);
+
+var lista = ["Kayck", "Gabriel", "Rossi", "Conceição", 18];
+
+alert(lista);
+//length é o tamanho da lista dentro da array 
+
+//lista.length exibe quantos itens tem dentro da lista dentro da array
+
+//lista[2]; serve para exibir somente um item selecionado da lista da array 
+
+//lista.indexOf('Kayck'); Ele vai me retornar qual é a posição desse elemento dentro da array
+//Quando você procura algum elemento dentro da array e ele não existe ele te retorna "-1"
+
+//lista.join("/") serve para juntar os elementos dentro da array com uma coisa da sua escolha como por exemplo "/ e ,"
+
+//lista.pop(); remove o ultimo elemento dentro da array
+
+//lista.shift(); remove o primeiro elemento dentro da array
+
+//lista[1] = "Kayck" serve para alterar um elemento que esteja dentro da array
+
+//lista.push("Rossi") serve para inserir um elemtro da array
+
+-------------
+Aqui fiz um metodo de comparação para saber se o item está na lista ou não 
+
+se o valor da array retorna menor que -1 significa não existe o elemento chamado dentro da array
+
+se o valor retornar maior que -1 significa que o elemento chamado existe dentro da minha array
+if(lista.indexOf("gabriel") >-1){
+    
+    alert("esse nome está na lista de chamada");
+
+}
+else{
+
+    alert("esse nome não está na lista")
+
+}
+-------------------------------------------
+
+//WEBSTOEAGE
+
+Cookies = serve para armazenar no navegador informações e valores do usuario, como por exemplo a ultima vez
+que ele acessou o site, e quando ele fecha o navegador fica salvo no Cookie sem apagar.
+
+Sessions = as informações que são armazenadas são salvas temporariamente, assim que o navegador é fechado
+a sessão apaga os dados armazenados.
+
+No JavaScript é usado LocalStorage e sesseionStorage 
+
+LocalStorage é salvo localmente no navegador do usuario 
+
+sesseionStorage funciona enquanto sua pagina esta aberta apos fechar a pagina perde a sessão.
+
+
